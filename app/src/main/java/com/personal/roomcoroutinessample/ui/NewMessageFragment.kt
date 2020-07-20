@@ -104,13 +104,10 @@ class NewMessageFragment : Fragment(),CoroutineScope {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
                                             grantResults: IntArray) {
 
-        Log.d("vaishak-7","dddd");
         when (requestCode) {
             MY_PERMISSIONS_REQUEST_LOCATION -> {
-                Log.d("vaishak-4","dddd");
                 if (grantResults.isNotEmpty() && grantResults[0] ==
                     PackageManager.PERMISSION_GRANTED) {
-                    Log.d("vaishak-5","dddd");
 
                     if ((ContextCompat.checkSelfPermission(requireContext(),
                             Manifest.permission.ACCESS_FINE_LOCATION) ===
@@ -125,7 +122,6 @@ class NewMessageFragment : Fragment(),CoroutineScope {
                             }else{
 
                         cityName = "Somewhere"
-                        Log.d("vaishak- city",cityName)
 
                     }
 
@@ -145,12 +141,10 @@ class NewMessageFragment : Fragment(),CoroutineScope {
                 val lat = lastKnownLoc.latitude.toString()
                 val lon = lastKnownLoc.longitude.toString()
 
-                Log.d("vaishak", lastKnownLoc.latitude.toString());
-                Log.d("vaishak", lastKnownLoc.longitude.toString());
+               
                 /*val stuff = async { viewModel.getCityFromCoordinates(lat, lon)}
             cityName = stuff.await()*/
                 cityName = viewModel.getCityFromCoordinates(lat, lon)
-                Log.d("vaishak- city", cityName)
             }catch(e : Exception){
 
                 cityName = "Nowhere"
@@ -183,7 +177,6 @@ class NewMessageFragment : Fragment(),CoroutineScope {
         }
         //message.messageString = messageBox.text!
 
-        Log.d("Maatsubishi","kakaka")
         super.onDetach()
     }
 

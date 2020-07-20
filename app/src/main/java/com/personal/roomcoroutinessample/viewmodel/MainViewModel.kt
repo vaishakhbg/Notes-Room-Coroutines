@@ -6,7 +6,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.personal.roomcoroutinessample.Status
 import com.personal.roomcoroutinessample.entity.Message
 import com.personal.roomcoroutinessample.repository.MessageRespository
 import kotlinx.coroutines.Dispatchers
@@ -78,8 +77,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application){
 
 
 
-    /*private val _status= MutableLiveData<Status>()
-    val status: LiveData<Status> = _status*/
+    
 
 
 
